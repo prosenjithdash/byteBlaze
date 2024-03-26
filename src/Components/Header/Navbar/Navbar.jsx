@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
 
@@ -23,15 +23,26 @@ const Navbar = () => {
     }
 
     const Links = <>
-        {/* <li><NavLink to="/">Home</NavLink></li> */}
-        {/* <li><NavLink to="/statistics">Statistics</NavLink></li> */}
-        {/* <li><NavLink to="/blogs">Blogs</NavLink></li>
-        <li><NavLink to="/bookmarks">Bookmarks</NavLink ></li> */}
 
-        <li><Link to="/">Home</Link></li>
+        <li><NavLink to="/" className={({ isActive }) =>
+            isActive ? 'text-primary font-bold' : 'font-bold'
+        }>Home</NavLink></li>
+
         {/* <li><NavLink to="/statistics">Statistics</NavLink></li> */}
-        <li><Link to="/blogs">Blogs</Link></li>
-        <li><Link to="/bookmarks">Bookmarks</Link ></li>
+
+        {/* <li><NavLink to="/blogs">Blogs</NavLink></li> */}
+        <li><NavLink to="/blogs" className={({ isActive }) =>
+            isActive ? 'text-primary font-bold' : 'font-bold'
+        }>Blogs</NavLink></li>
+
+
+
+        {/* <li><NavLink to="/bookmarks">Bookmarks</NavLink ></li> */}
+
+        <li> <NavLink to="/bookmarks" className={({ isActive }) =>
+            isActive ? 'text-primary font-bold' : 'font-bold'
+        }>Bookmarks</NavLink></li>
+
     </>
     return (
         <div>
@@ -52,8 +63,8 @@ const Navbar = () => {
                 {/* <div className="navbar-end hidden lg:flex">
                     
                 </div> */}
-                <div className="navbar-end ">
-                    <ul className="menu menu-horizontal font-bold hidden lg:flex  px-1">
+                <div className="navbar-end flex-1  gap-6">
+                    <ul className="gap-6 menu-horizontal  hidden lg:flex  px-1">
                         {Links}
                     </ul>
                     {/* //navbar theme  */}
