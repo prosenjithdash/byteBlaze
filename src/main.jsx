@@ -3,37 +3,14 @@ import ReactDOM from 'react-dom/client'
 import './index.css'
 
 import {
-  createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import MainRoot from './Components/MainRoot/MainRoot';
-import Home from './Pages/Home/Home';
-import Blogs from './Pages/Blogs/Blogs';
-import Error from './Pages/Error/Error';
-import Bookmarks from './Pages/Bookmarks/Bookmarks';
+import { router } from './Routes/Routes';
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <MainRoot></MainRoot>,
-    errorElement: <Error></Error>,
-    children: [
-      {
-        path: '/',
-        element:<Home></Home>
-      },
-      {
-        path: '/blogs',
-        loader: () => fetch('https://dev.to/api/articles?per_page=20?top=7'),
-        element:<Blogs></Blogs>
-      },
-      {
-        path: '/bookmarks',
-        element:<Bookmarks></Bookmarks>
-      }
-    ]
-  },
-]);
+
+
+
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

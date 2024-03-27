@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import wevSVG from '../../assets/wave.svg'
-import demoSVG from '../../assets/demo.svg'
 const Home = () => {
     return (
         <div className="">

@@ -4,6 +4,7 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  // update theme for animation
    theme: {
     extend: {
       keyframes: {
